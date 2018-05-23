@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
 #before_action :authenticate_user!
- before_action :authenticate_with_http_digest
+ before_filter :authenticate_user!, :only => [:new, :create]
 
 
 def index
